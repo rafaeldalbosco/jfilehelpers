@@ -138,8 +138,10 @@ public class MasterDetailEngine<MT, DT> extends EngineBase<DT> {
 			}
 		}
 	}
-	
-	private void writeStream(OutputStreamWriter osr, List<MasterDetails<MT, DT>> records, int maxRecords) throws IOException {
+    public void writeStream(OutputStreamWriter osr, List<MasterDetails<MT, DT>> records) throws IOException {
+        writeStream(osr, records, -1);
+    }
+    public void writeStream(OutputStreamWriter osr, List<MasterDetails<MT, DT>> records, int maxRecords) throws IOException {
 		BufferedWriter writer = new BufferedWriter(osr);
 		
 		resetFields();
